@@ -14,4 +14,4 @@ RUN pip install --trusted-host pypi.python.org -r requirements.txt
 EXPOSE 8501
 
 # Run streamlit.py when the container launches
-CMD ["streamlit", "run", "streamlit.py"]
+CMD ["streamlit", "run", "app/app.py"]
