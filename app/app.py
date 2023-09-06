@@ -52,13 +52,28 @@ def generate_response(uploaded_file, openai_api_key, query_text):
 def main() -> None:
     st.set_page_config(page_title=TITLE)
     st.title(TITLE)
-    st.write("Unlock the essence of your documents. PDF DeepDive harnesses the power of AI to instantly scan, analyze, and summarize your PDFs, offering insights at a glance.")
+    st.write(
+        "Unlock the essence of your documents. \
+            This harnesses the power of AI to instantly scan, analyze, \
+                and/or summarize your PDFs, offering insights at a glance."
+    )
 
+    with st.expander("Instruction", expanded=False):
+        st.write("""
+        1. Upload a pdf file.
+        2. Enter your OpenAI API key.
+        3. Enter your prompt.
+        """)
+        
     # File upload
     uploaded_file = st.file_uploader('Upload an article', type='pdf')
     # Query text
-    query_text = st.text_input('Enter your question:', placeholder = 'Please provide a short summary.', disabled=not uploaded_file)
-
+    query_text = st.text_input(
+        'Enter your question:', 
+        placeholder = 'Please provide a short summary.', 
+        disabled=not uploaded_file
+    )
+    
     # Form input and query
     result = []
     with st.form('myform', clear_on_submit=True):
