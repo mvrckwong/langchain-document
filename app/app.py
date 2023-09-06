@@ -53,7 +53,7 @@ if __name__ == "__main__":
       st.set_page_config(page_title="AI-Powered Chat")
       st.title("AI-Powered Chat")
       st.write(
-            "Chat with pre-trained transformer models."
+            f"Chat with pre-trained transformer models using {MODEL_NAME}."
       )
 
       with st.expander("Details", expanded=False):
