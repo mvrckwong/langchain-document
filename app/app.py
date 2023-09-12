@@ -65,3 +65,5 @@ if __name__ == "__main__":
             
             if submitted:
                   generate_response(text)
+            else:
+                  None
